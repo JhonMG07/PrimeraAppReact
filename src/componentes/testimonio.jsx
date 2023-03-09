@@ -1,25 +1,16 @@
 import React from "react";
-import img1 from "../image/next.png"
-function Testimonio() {
+
+import "../StyleSheet/tertimonio.css";
+
+function Testimonio(props) {
   return (
     <div className="contenedor-lenguajes">
-      <img
-        className="imagen-logo"
-        src={img1}
-        alt="Foto Next"
-      />
-      {/* se le añade los dos puntos para subir un nivel y poder entrar a image */} 
+      <img className="imagen-logo" src={props.imagen} alt={`Foto-${props.nombreFoto}`} />
+      {/* se le añade los dos puntos para subir un nivel y poder entrar a image */}
       <div className="contenedor-texto-lenguaje">
-        <p className="nombre-lenguaje">Next JS</p>
-        <p className="creador-lenguaje">Vercel</p>
-        <p className="texto-lenguaje">
-          NextJS es un framework JavaScript ligero y de código abierto creado
-          sobre React, que permite desarrollar aplicaciones y sitios web muy
-          rápidos y fáciles de usar. Aunque tiene una curva de aprendizaje,
-          incluso los desarrolladores nuevos de front-end pueden aprenderlo
-          rápidamente. Se basa en Babel y Node.js, integrándose con React para
-          desarrollar aplicaciones.
-        </p>
+        <p className="nombre-lenguaje"><strong>{props.nombre}</strong></p>
+        <p className="creador-lenguaje"><strong>{props.creator}</strong></p>
+        <p className="texto-lenguaje">"{props.descripcion}"</p>
       </div>
     </div>
   );
